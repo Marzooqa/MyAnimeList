@@ -1,0 +1,26 @@
+<%- include("head.ejs") %>
+    <div class="bdy">
+        <div class="display">
+            <% if(array && array.length>0){ %>
+                <% array.forEach((element,index) => {%>
+                    <div class="items">
+                        <img src="<%=element.url  %>" alt="">
+                        <p>Anime Name : <%= element.name %></p>
+                        <p>Genre : <%= element.genre %></p>
+                        <p>Rating : <%= element.rating %>/5</p>
+                        <div class="btns">
+                            <form action="/delete/<%=index %>" method="post">
+                                <button>Delete</button>
+                            </form>
+                            <form action="/edit/<%=index %>" method="post">
+                                <button>Edit</button>
+                            </form>    
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else {%>
+                <h1>No Anime Added</h1>
+            <% } %>
+        </div>
+    </div>
+<%- include("foot.ejs") %>

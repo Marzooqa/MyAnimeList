@@ -1,0 +1,13 @@
+<%- include("head.ejs") %>
+    <div class="bdy">
+        <div class="form-body">
+            <form action="/change/<%= index %>" method="post" class="forms">
+                <input type="text" name="name" placeholder="Enter Anime Name" value="<%=element.name  %>">
+                <input type="text" name="genre" placeholder="Enter Genre" value="<%= element.genre %>">
+                <input type="text" name="url" placeholder="Enter url" value="<%= element.url %>">
+                <input type="text" name="rating" placeholder="Enter Rating Out Of 5" value="<%= element.rating %>">
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+<%- include("foot.ejs") %>
